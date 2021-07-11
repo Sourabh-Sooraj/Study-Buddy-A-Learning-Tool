@@ -1,0 +1,52 @@
+
+<html>
+    <style>
+        body{
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+    <head>
+    <title>StudyBuddy</title>
+    
+    <img class="applogo" src="/images/Brand.jpg" alt="Logo">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <a class="adminbutton" href="/users/admin">  Admin </a> 
+    <a class="signupbutton" href="/users/register"> Sign Up </a>
+    <link rel="stylesheet" type="text/css" href="/css/LoginStyle.css"> <!--linking the css component-->
+</head>
+
+
+
+<body>
+    
+    <div class="loginbox"> <!--creating a class called login box-->
+   
+     <img src="/images/indexpic.png" alt="Logo" class="Logo">
+        <h2 id="Title1"><u>Student Login</u></h2>
+
+        <form action="/users/login" method="POST">
+            
+            <p>Username</p>
+            <input class="form-control" type="text" placeholder="Enter Username" name="username" required />
+            <p>Password </p>
+            <input class="form-control" type="password" placeholder="Enter Password" name="password" required autocomplete="off">
+            <p class="help-block"><a href="user-forgot-password.html">Forgot Password</a></p>
+            <br>
+            <button type="submit" class="loginbutton">Submit</button>
+            <br>
+        </form>
+    </div>
+    <div class="copyright">
+        &copy; 2021  <em><strong>StuddyBuddy</strong></em> | <a href="" target="_blank"  > Designed by : Team 42 CSE-B</a> 
+     </div>
+    <script src='/js/sample3.js'></script>
+</body>
+</html>
+
+
+
+

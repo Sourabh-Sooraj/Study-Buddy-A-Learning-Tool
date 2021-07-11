@@ -1,0 +1,41 @@
+<html>
+    <style>
+        body{
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>StudyBuddy</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<a class="logoutbutton" href="/users/login"> Login </a>
+<link rel="stylesheet" type="text/css" href="/css/admincss.css"> <!--linking the css component-->
+<body>
+    <div class="loginbox"> 
+        
+    <img src="/images/signuppic.png" alt="Logo" class="Logo"><!--creating a logo class to modify the logo-->
+    <h2 id="Title1"><u>Signup</u></h2>
+
+    <form action="/users/register" method="POST">
+            <p> Name</p>
+            <input type="text" name="Uname" placeholder="Name" id="Username" required>
+            <p>Email Address</p>
+            <input class="form-control" type="text" placeholder="Enter Email Address" name="email address" required>
+            <p>Set a Password</p>
+            <input class="form-control" type="text" placeholder="Enter Password" name="password" required>
+            <p>Confirm Password</p>
+            <input class="form-control" type="text" placeholder="Enter Password" name="password1" required>
+            <br>
+            <button type="submit" class="btn btn-primary loginbutton">Submit</button>
+    </form>
+    </div>
+    <script src='/js/sample2.js'></script>
+    </body>
+</html>
+
+
+

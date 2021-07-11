@@ -1,0 +1,40 @@
+<html>
+    <style>
+        body{
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>StudyBuddy</title>
+</head>
+<a class="logoutbutton" href="/users/login"> Logout </a>
+<link rel="stylesheet" type="text/css" href="/css/admincss.css"> <!--linking the css component-->
+<body>
+    <div class="loginbox"> <!--creating a class called login box-->
+    <img src="/images/Admin2.png" alt="Logo" class="Logo"><!--creating a logo class to modify the logo-->
+    <h2 id="Title1"><u>Admin Login</u></h2>   
+
+    <form action="/users/admin" method="POST">
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Enter Username" id="username" required>
+            <p> Password</p>
+            <input class="form-control" type="password" placeholder="Enter Password" name="password" required autocomplete="off">
+            <p class="help-block"><a href="user-forgot-password.html">Forgot Password</a></p>
+            <br>
+            <button type="submit" class="loginbutton">Submit</button>
+            <script>
+                var uname 
+            </script>
+           </form>
+    </div>
+    <script src='/js/sample2.js'></script>
+    </body>
+</html>
+
+
+

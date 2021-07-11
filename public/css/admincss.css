@@ -1,0 +1,129 @@
+/*modifying the background details*/
+body {
+  margin: 0;
+  padding: 0;
+
+  background-size: cover;
+  background-position: center;
+}
+h1 {
+  font-size: 10px;
+  position: relative;
+  padding-bottom: 10px;
+}
+/*defining the features of login box*/
+.loginbox {
+  width: 300px;
+  height: 585px;
+  border: tomato;
+  background: rgb(255, 255, 255);
+  color: #0d3333;
+  top: 50%;
+  left: 50%;
+  padding-bottom: 10px;
+  border-radius: 5%;
+  position: relative;
+  transform: translate(-50%, -50%);
+}
+/*defining the features of logo*/
+.Logo {
+  width: 150px;
+  height: 150px;
+  padding-top: 10px;
+  position: relative;
+  left: calc(43% - 50px);
+}
+
+/*defining featurs of contents inside the login box*/
+/*Welcome*/
+h1 {
+  margin: -20px;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 20px;
+}
+/*others*/
+form {
+  margin: 20px;
+}
+.loginbox p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.loginbox input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.loginbox input[type="text"],
+input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  height: 40px;
+  color: rgb(12, 1, 1);
+  font-size: 16px;
+}
+.loginbutton {
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 10;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 70px;
+  padding-right: 70px;
+  margin-left: 23px;
+  background-color: #66bfbf;
+  position: relative;
+  border: solid #337fed 0;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.loginbutton:hover {
+  background: #50a3e6;
+  border: outset #50a3e6 0;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 16px;
+  text-decoration: none;
+}
+
+.logoutbutton {
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 10;
+  padding: 10px;
+  background-color: #f63d3d;
+  position: absolute;
+  right: 130px;
+  top: 20px;
+  text-shadow: 0 1px 20px #000000;
+  border: solid #337fed 0;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.logoutbutton:hover {
+  background: #ff0404;
+  border: outset #dd380d 0;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 16px;
+  text-decoration: none;
+}
+#Title1{
+  text-align: center;
+  padding-top: none;
+}
+

@@ -1,0 +1,31 @@
+<html>
+    <style>
+    </style>
+    <head>
+       
+    <title>StudyBuddy Admin</title>
+</head>
+<a class="logoutbutton" href="/users/login"> Logout </a>
+
+<link rel="stylesheet" type="text/css" href="/css/admincss.css"> <!--linking the css component-->
+<body>
+    
+    <div class="loginbox">   
+        <h1>Admin Dashboard</h1>
+    <form action="/users/adminlogin" method="GET">
+            <p>Username</p>
+            <input type="text" name="Uname" placeholder="Enter Username" id="Username" required>
+            <p> Generate Room Code</p>
+            <input class="form-control" type="text" placeholder="Enter Room Code" name="Code" required autocomplete="off">
+            <br>
+            <a type="submit"class="loginbutton" >Generate Code </a>
+            <script>
+                var uname
+            </script>
+           </form>
+    </div>
+    </body>
+</html>
+
+
+

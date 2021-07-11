@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title> Chatbox</title>
+  </head>
+  <body class="bod"></body>
+    <a href="/users/loginpage" class="logoutbutton">Leave Room</a>
+
+  <div id="canvasDiv">
+    <canvas class="whiteboard"></canvas>
+  </div>
+
+  <div class="colors">
+    <div class="color black"></div>
+    <div class="color red"></div>
+    <div class="color green"></div>
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+    <div class="color white"></div>
+    <div class="color white"><img src="/images/WEraser.png" alt=""></div>
+  </div>
+  <div class="btn-group btn-group-sm justify-content-center pt-3 wid" role="group" aria-label="...">
+    <button type="button" class="btn btn-outline-dark two ina">2</button>
+    <button type="button" class="btn btn-outline-dark ten ina">10</button>
+    <button type="button" class="btn btn-outline-dark tfv ina">25</button>
+    <button type="button" class="btn btn-outline-dark fifty ina">50</button>
+    <button type="button" class="btn btn-outline-dark sfv ina">75</button>
+</div>
+
+    <div class="therow">
+      <div class="iconDock">
+  
+        <button id="pomodoroButton"><img class="image1" src="/images/timer.png" alt=""></button>
+    
+        <button id="calcButton"><img class="image1" src="/images/calculator2.png" alt=""></button>
+    
+        <button id="todoBtn" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal"><img class="image1" src="/images/Clipboard.png" alt=""></button>
+
+        <button id="chatboxButton"><img class="image1" src="/images/chatbox1.png" alt=""></button>
+      </div>
+  
+      <div class="elementDock">
+        <div class="card bg-danger text-white" style="width: 27rem;" id="pomodoroCard">
+            <button type="button" class="btn-close closeBtn" id="pomodoroClose" aria-label="Close"></button>
+            <img src="/images/Pomodoro.png" class="card-img-top" alt="...">
+            <h5 class="card-header">Pomodoro Timer</h5>
+            <div class="card-body">
+            <h1><span id="minutes">25</span><span id="colon">:</span><span id="seconds">00</span></h1>
+            <span id="quote">Hello! I will be fueling you with inspiration during your work session.</span>
+            <span id="author"></span>
+            <br>
+            <span>You worked for: </span><span id="workTime">0</span><span> hours</span>
+            <br>
+            <span>You relaxed for: </span><span id="breakTime">0</span><span> hours</span>
+            </div>
+            <div class="card-footer">
+            <button type="button" id="work" class="btn btn-success col-3">Start</button>
+            <button type="button" id="shortBreak" class="btn btn-info">Short Break</button>
+            <button type="button" id='longBreak' class="btn btn-primary">Long Break</button>
+            <button type="button" id="stop" class="btn btn-warning col-2">Reset</button>
+            </div>
+        </div>
+    
+        <div id="calc">
+            <button type="button" class="btn-close closeBtn" id="calcClose" aria-label="Close"></button>
+            <header id="screen"></header>
+            <table id="calcbody">
+            
+                    <tbody>
+                    <tr class="orange">
+                        <td onclick="clearScr()">AC</td>
+                            <td onclick="sendNum('*0.01')">%</td>
+                            <td onclick="sendNum('/')">/</td>
+                    </tr>
+                    <tr class="orange">
+                        <td onclick="sendNum('+')">+</td>
+                        <td onclick="sendNum('-')">-</td>
+                        <td onclick="sendNum('*')">x</td>
+                    </tr>
+                    <tr>
+                            <td onclick="sendNum('7')">7</td>
+                            <td onclick="sendNum('8')">8</td>
+                            <td onclick="sendNum('9')">9</td>
+                    </tr>
+                    <tr>
+                        <td onclick="sendNum('4')">4</td>
+                        <td onclick="sendNum('5')">5</td>
+                        <td onclick="sendNum('6')">6</td>
+                    </tr>
+                    <tr>
+                            <td onclick="sendNum('1')">1</td>
+                        <td onclick="sendNum('2')">2</td>
+                        <td onclick="sendNum('3')">3</td>
+                    </tr>
+                    <tr>
+                            <td onclick="sendNum('.')">.</td>
+                        <td onclick="sendNum('0')">0</td>
+                        <td onclick="equalTo()">=</td>
+                    </tr>	
+                </tbody>
+            </table>
+        </div>
+        <div class="chat-container " id="Chatbox">
+        <header class="chat-header">
+          <h1> Chatbox</h1>
+          
+        </header>
+        <main class="chat-main">
+          <div class="chat-sidebar">
+            <h3><i class="fas fa-comments"></i> Room Code:</h3>
+            <h2 id="room-name"></h2>
+            <h3><i class="fas fa-users"></i> Users</h3>
+            <ul id="users"></ul>
+          </div>
+          <div class="chat-messages"></div>
+        </main>
+        <div class="chat-form-container">
+          <form id="chat-form">
+            <input
+              id="msg"
+              type="text"
+              placeholder="Enter Message"
+              required
+              autocomplete="off"
+            />
+            <button class="button"><i class="fas fa-paper-plane"></i> Send</button>
+          </form>
+        </div>
+      </div>
+  
+    
+    </div>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tasks</h5>
+                <button type="button" class="btn-close closeBtn" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="taskList">
+    
+                    </div>
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">New Task:</label>
+                    <textarea class="form-control" id="message-text"></textarea>
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary closeBtn" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger remBtn">Remove</button>
+                <button type="button" id="addTask" class="btn btn-primary">Add</button>
+            </div>
+            </div>
+        </div>
+        </div>
+
+      
+    </div>
+  
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+        integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+        crossorigin="anonymous"
+      ></script>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/js/main.js"></script>
+      <script src='/js/sample.js'></script>
+      <script src='/js/wb.js'></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    </body>
+  </html>
+  
